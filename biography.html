@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Remix - Offizielle Webseite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #EAEAEA;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Startseite */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #121212;
+            color: #EAEAEA;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .countdown {
+            font-size: 1.5rem;
+            background-color: #00FF99;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .nav a {
+            color: #EAEAEA;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Biografie */
+        .bio-section {
+            padding: 50px 20px;
+            background-color: #1f1f1f;
+            text-align: center;
+        }
+
+        .timeline-container {
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .timeline {
+            list-style: none;
+            padding: 0;
+            position: relative;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: slideUp 1s forwards ease-out;
+            cursor: pointer;
+        }
+
+        .timeline-item .date {
+            font-weight: bold;
+            color: #00FF99;
+            font-size: 1.7rem;
+            position: absolute;
+            left: -120px;
+            top: 0;
+            transform: translateX(-100%);
+            background-color: #121212;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .timeline-item:hover .date {
+            transform: translateX(0);
+        }
+
+        .timeline-item .content {
+            background-color: #1f1f1f;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 50px rgba(0, 255, 153, 0.3);
+            color: #eaeaea;
+            width: 60%;
+            margin-left: 20%;
+        }
+
+        .audio-controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .audio-button {
+            padding: 10px 15px;
+            background-color: #00FF99;
+            color: #121212;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .audio-button:hover {
+            background-color: #ff00ff;
+        }
+
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sponsoren */
+        .sponsors-section {
+            padding: 50px 20px;
+            background-color: #1f1f1f;
+            text-align: center;
+        }
+
+        .sponsor-logo {
+            max-width: 300px;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Startseite -->
+<div class="header">
+    <h1>Jason Remix</h1>
+    <div class="countdown" id="countdown"></div>
+    <div class="nav">
+        <a href="#bio">Biografie</a>
+        <a href="#sponsors">Sponsoren</a>
+    </div>
+</div>
+
+<!-- Biografie -->
+<section id="bio" class="bio-section">
+    <h2>Meine Geschichte</h2>
+    <div class="timeline-container">
+        <ul class="timeline">
+            <li class="timeline-item" onclick="speak('Geboren in Brandenburg an der Havel, entdeckte meine Leidenschaft für Musik im frühen Alter.')">
+                <div class="date">2006</div>
+                <div class="content">
+                    <p>Geboren in Brandenburg an der Havel, entdeckte meine Leidenschaft für Musik im frühen Alter.</p>
+                </div>
+            </li>
+            <li class="timeline-item" onclick="speak('Startete die Produktion meiner ersten Songs und experimentierte mit verschiedenen Genres.')">
+                <div class="date">2020</div>
+                <div class="content">
+                    <p>Startete die Produktion meiner ersten Songs und experimentierte mit verschiedenen Genres.</p>
+                </div>
+            </li>
+            <li class="timeline-item" onclick="speak('Erfolg mit meinem ersten großen Track "Alles ist relativ", der schnell die Charts eroberte.')">
+                <div class="date">2024</div>
+                <div class="content">
+                    <p>Erfolg mit meinem ersten großen Track "Alles ist relativ", der schnell die Charts eroberte.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="audio-controls">
+        <button class="audio-button" onclick="speak('Willkommen auf meiner Website! Entdecke die neuesten Updates und Musik!')">Willkommen hören</button>
+        <button class="audio-button" onclick="speak('Viel Spaß beim Stöbern und Lauschen meiner Musik!')">Musik hören</button>
+    </div>
+</section>
+
+<!-- Sponsoren -->
+<section id="sponsors" class="sponsors-section">
+    <h2>Unsere Sponsoren</h2>
+    <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/2560px-Coca-Cola_logo.svg.png"text=Sponsor+1" alt="Sponsor 1" class="sponsor-logo">
+        <img src="https://www.designenlassen.de/blog/wp-content/uploads/2024/03/Red_Bull_GmbH_logo.svg_.png" alt="Sponsor 2" class="sponsor-logo">
+    </div>
+</section>
+
+<script>
+    // Countdown für die neue Single
+    const countdownDate = new Date("Nov 15, 2024 00:00:00").getTime();
+    const countdownFunction = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.getElementById("countdown").innerHTML = "Die Single ist jetzt draußen!";
+        }
+    }, 1000);
+
+    // Vorlesefunktion
+    function speak(text) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'de-DE'; // Sprache auf Deutsch setzen
+        speechSynthesis.speak(utterance);
+    }
+</script>
+
+</body>
+</html>
